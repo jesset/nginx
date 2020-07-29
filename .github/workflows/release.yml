@@ -43,7 +43,7 @@ jobs:
         tag_name: ${{ github.ref }}
         release_name: Release ${{ github.ref }}
         draft: false
-        prerelease: false
+        prerelease: true
         # body: |
         #   Changes in this Release
         #   - First Change
@@ -60,3 +60,12 @@ jobs:
         asset_path: objs/nginx-bin.zip
         asset_name: nginx-bin-x86_64.zip
         asset_content_type: application/zip
+
+    - name: Build and push Docker images
+      uses: docker/build-push-action@v1
+      with:
+        username: ${{ github.actor }}
+        password: ${{ github.token }}
+        repository: jesset/nginx
+        tag_with_ref: true
+        tag_with_sha: false
