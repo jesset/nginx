@@ -11,7 +11,7 @@
 
 #define nginx_version      1019001
 #define NGINX_VERSION      "1.19.1"
-#define NGINX_VER          "nginx/" NGINX_VERSION
+#define NGINX_VER          "nginx"
 
 #ifdef NGX_BUILD
 #define NGINX_VER_BUILD    NGINX_VER " (" NGX_BUILD ")"
